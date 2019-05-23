@@ -1,68 +1,106 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+## Project Schedule
 
-In the project directory, you can run:
+This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
-### `npm start`
+You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1| Project Description | Incomplete
+|Day 2| Wireframes / Priority Matrix / Functional Components | Incomplete
+|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 4| Pseudocode / actual code | Incomplete
+|Day 5| Initial Clickable Model  | Incomplete
+|Day 6| MVP | Incomplete
+|Day 7| Present | Incomplete
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Project Description
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
 
-### `npm run build`
+## Wireframes
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Priority Matrix
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
 
-### `npm run eject`
+### MVP/PostMVP - 5min
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### SAMPLE.....
+#### MVP 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Find and use external api 
+- Render data on page in a list
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### PostMVP 
 
-## Learn More
+- Add data to favorites section
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## React Architectural Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Define the the React components and the architectural design of your app.
 
-### Code Splitting
+#### [SAMPLE FROM A MAP BASED PROJECT](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540221204/20181022_111216.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Functional Components
 
-### Analyzing the Bundle Size
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### SAMPLE.....
+| Component | Description | 
+| --- | :---: |  
+| Header | This will render the header include the nav | 
+| Footer | This will render the header include the nav | 
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
-### Advanced Configuration
+#### SAMPLE.....
+| Component | Priority | Estimated Time | Actual Time |
+| --- | :---: |  :---: | :---: |
+| Adding Form | H | 3hrs| 3.5hrs |
+| Working with API | H | 3hrs| 2.5hrs |
+| Total | H | 6hrs| 5hrs | 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Additional Libraries
+ Use this section to list all supporting libraries and thier role in the project. 
+ 
+ #### SAMPLE.....
+| Library | What it Does | 
+| --- | :---: |  
+| Bootstrap | Used to help style my application | 
+| Giphy API | Used to get gifs to use | 
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Code Snippet
 
-### `npm run build` fails to minify
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### SAMPLE.....
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Change Log
+ Use this section to document what changes were made and the reasoning behind those changes.  
+
+#### SAMPLE.....
+| Original Plan | Outcome | 
+| --- | :---: |  
+| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
+
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
