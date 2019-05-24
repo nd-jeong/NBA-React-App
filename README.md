@@ -82,7 +82,8 @@ Based on the initial logic defined in the previous sections try and breakdown th
  #### SAMPLE.....
 | Library | What it Does | 
 | --- | :---: |  
-| The Sports DB API | Used for team and player info | 
+| The Sports DB API | Used for team and player info |
+| Ball Dont Lie API | Used for team info and player statistics |  
 
 ## Code Snippet
 
