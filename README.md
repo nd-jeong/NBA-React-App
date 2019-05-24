@@ -97,6 +97,7 @@ function reverse(string) {
 
 ## API Data Snippet
 --Team--
+```
 {
             "idTeam": "134880",
             "idSoccerXML": null,
@@ -115,8 +116,10 @@ function reverse(string) {
             "strRSS": "www.nba.com/hawks/rss.xml",
             "strStadiumThumb": "https://www.thesportsdb.com/images/media/team/stadium/qxstqs1420567922.jpg",
             "strStadiumDescription": "The Atlanta Hawks are an American professional basketball team based in Atlanta, Georgia. The Hawks compete in the National Basketball Association (NBA) as a member of the league's Eastern Conference Southeast Division. The team plays its home games at State Farm Arena.\r\n\r\nThe team's origins can be traced to the establishment of the Buffalo Bisons in 1946 in Buffalo, New York, a member of the National Basketball League (NBL) owned by Ben Kerner and Leo Ferris. After 38 days in Buffalo, the team moved to Moline, Illinois, where they were renamed the Tri-Cities Blackhawks. In 1949, they joined the NBA as part of the merger between the NBL and the Basketball Association of America (BAA), and briefly had Red Auerbach as coach. In 1951, Kerner moved the team to Milwaukee, where they changed their name to the Hawks. Kerner and the team moved again in 1955 to St. Louis, where they won their only NBA Championship in 1958 and qualified to play in the NBA Finals in 1957, 1960 and 1961. The Hawks played the Boston Celtics in all four of their trips to the NBA Finals. The St. Louis Hawks moved to Atlanta in 1968, when Kerner sold the franchise to Thomas Cousins and former Georgia Governor Carl Sanders.\r\n\r\nThe Hawks currently own the second-longest drought (behind the Sacramento Kings) of not winning an NBA championship at 60 seasons. The franchise's lone NBA championship, as well as all four NBA Finals appearances, occurred when the team was based in St. Louis. Meanwhile, they went 48 years without advancing past the second round of the playoffs in any format, until finally breaking through in 2015. However, the Hawks are one of only four NBA teams that have qualified to play in the NBA playoffs in 10 consecutive seasons in the 21st century. They achieved this feat between 2008 and 2017. The other teams that have made it to at least 10 consecutive playoff appearances in the 21st century are the San Antonio Spurs (1998–present), Denver Nuggets (2004–2013), and Dallas Mavericks (2001–2012).",
-	    
+```
+
 --Player--
+```
 {
             "idPlayer": "34154295",
             "idTeam": "134864",
@@ -154,6 +157,7 @@ function reverse(string) {
             "strThumb": "https://www.thesportsdb.com/images/media/player/thumb/mlusvy1550408497.jpg",
             "strCutout": "https://www.thesportsdb.com/images/media/player/cutout/hfw3a01550447120.png",
         },
+```
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
