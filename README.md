@@ -12,8 +12,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 2| Core Application Structure (HTML, CSS, etc.) / Pseudocode / actual code| Incomplete
 |Day 3| Initial Clickable Model | Incomplete
 |Day 4| More code | Incomplete
-|Day 5| Even more code  | Incomplete
-|Day 6| MVP | Incomplete
+|Day 5| Even more code / Styling / MVP| Incomplete
+|Day 6| MVP / Post-MVP | Incomplete
 |Day 7| Present | Incomplete
 
 
