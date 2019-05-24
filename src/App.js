@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import axios from 'axios';
+import {Route, Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+
+        }
+    }
+
+    async componentDidMount() {
+        const fetchTeamData = await axios.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=NBA');
+        const fetchPlayerData = await axios.get('https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Toronto Raptors');
+        console.log(fetchPlayerData)
+    }
+
+    render() {
+        return(
+            <div>
+                
+            </div>
+        )
+    }
 }
 
 export default App;
