@@ -49,7 +49,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## React Architectural Design
 
-https://drive.google.com/open?id=1-4Bv05IOKe0YtTzJn2OUmlDzWfVNLnuF
+https://drive.google.com/file/d/1-4Bv05IOKe0YtTzJn2OUmlDzWfVNLnuF/view?usp=sharing
 
 ## Functional Components
 
