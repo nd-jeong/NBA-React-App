@@ -8,7 +8,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Wireframes / Priority Matrix / Functional Components | Incomplete
+|Day 1| Wireframes / Priority Matrix / Functional Components | Complete
 |Day 2| Core Application Structure (HTML, CSS, etc.) / Pseudocode / actual code| Incomplete
 |Day 3| Initial Clickable Model | Incomplete
 |Day 4| More code | Incomplete
