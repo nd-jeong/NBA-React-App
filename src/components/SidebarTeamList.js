@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class SideNavBar extends Component {
+class SidebarTeamList extends Component {
     constructor(props) {
         super(props);
 
@@ -10,16 +10,15 @@ class SideNavBar extends Component {
         this.conferenceToggle = this.conferenceToggle.bind(this);
     }
     
-    conferenceToggle(filter) {
-        console.log(filter)
+    conferenceToggle(conference) {
+        console.log(conference)
         this.setState({
-            filter
+            conference
         })
     }
 
     render() {
         const teams = this.props.teamArray;
-        console.log(teams)
         return(
             <div>
                 <div>
@@ -32,8 +31,8 @@ class SideNavBar extends Component {
                 </div>
                 <div>
                     {teams && teams.map(team => 
-                        {if (team.conference === this.state.filter) {
-                            return <h4 key={team.id}>{team.full_name}</h4>
+                        {if (team.conference === this.state.conference) {
+                            return <h4 key={team.id} onClick={this.props.fetchCurrentTeam}>{team.full_name}</h4>
                         }}
                     )}
                 </div>
@@ -42,4 +41,4 @@ class SideNavBar extends Component {
     }  
 }
 
-export default SideNavBar;
+export default SidebarTeamList

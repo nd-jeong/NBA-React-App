@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import {Route, Link} from 'react-router-dom';
-import TeamList from './components/SideNavBar'
+import SidebarTeamList from './components/SidebarTeamList';
+import DisplayInfo from './components/DisplayInfo';
 
 class App extends Component {
     constructor() {
@@ -10,8 +11,10 @@ class App extends Component {
 
         this.state = {
             allTeamsInfo: [],
-            allTeamsList: []
+            allTeamsList: [],
+            currentTeam: ''
         }
+        this.fetchCurrentTeam = this.fetchCurrentTeam.bind(this);
     }
 
     async componentDidMount() {
@@ -30,13 +33,21 @@ class App extends Component {
             })
     }
 
+    fetchCurrentTeam(event) {
+        console.log('selected team')
+        this.setState({
+            currentTeam: event.target
+        })
+    }
+
     render() {
         const teamArray = this.state.allTeamsList;
         
         return(
             <div>
-                <TeamList
+                <SidebarTeamList
                     teamArray={teamArray}
+                    fetchCurrentTeam={this.fetchCurrentTeam}
                 />
             </div>
         )
