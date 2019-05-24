@@ -33,10 +33,10 @@ class App extends Component {
             })
     }
 
-    fetchCurrentTeam(event) {
-        console.log('selected team')
+    fetchCurrentTeam(currentTeam) {
+        console.log('selected ' + currentTeam)
         this.setState({
-            currentTeam: event.target
+            currentTeam
         })
     }
 

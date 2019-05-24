@@ -8,6 +8,7 @@ class SidebarTeamList extends Component {
             conference: ''
         }
         this.conferenceToggle = this.conferenceToggle.bind(this);
+        this.handleTeamClick = this.handleTeamClick.bind(this);
     }
     
     conferenceToggle(conference) {
@@ -15,6 +16,10 @@ class SidebarTeamList extends Component {
         this.setState({
             conference
         })
+    }
+
+    handleTeamClick(currentTeam) {
+        this.props.fetchCurrentTeam(currentTeam);
     }
 
     render() {
@@ -32,7 +37,7 @@ class SidebarTeamList extends Component {
                 <div>
                     {teams && teams.map(team => 
                         {if (team.conference === this.state.conference) {
-                            return <h4 key={team.id} onClick={this.props.fetchCurrentTeam}>{team.full_name}</h4>
+                            return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</h4>
                         }}
                     )}
                 </div>
