@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
 import {Route, Link} from 'react-router-dom';
-import TeamList from './components/TeamList'
+import TeamList from './components/SideNavBar'
 
 class App extends Component {
     constructor() {
