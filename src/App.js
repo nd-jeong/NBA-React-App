@@ -12,7 +12,9 @@ class App extends Component {
         this.state = {
             allTeamsInfo: [],
             allTeamsList: [],
-            currentTeam: ''
+            currentTeam: [],
+            currentTeamInfo: [],
+            currentTeamCheck: false
         }
         this.fetchCurrentTeam = this.fetchCurrentTeam.bind(this);
     }
@@ -24,7 +26,20 @@ class App extends Component {
                     allTeamsInfo: res.data
                 })
             })
-        const fetchPlayerData = await axios.get('https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Toronto Raptors');
+        
+
+        // if (this.state.currentTeamCheck == true) {
+        //     await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${this.state.currentTeam}`)
+        //     .then(res => {
+        //         this.setState({
+        //             currentTeamInfo: res,
+        //             currentTeamCheck: false
+        //         })
+        //     })
+        // }
+        
+
+
         await axios.get('https://www.balldontlie.io/api/v1/teams')
             .then(res => {
                 this.setState({
@@ -33,11 +48,19 @@ class App extends Component {
             })
     }
 
-    fetchCurrentTeam(currentTeam) {
+    async fetchCurrentTeam(currentTeam) {
         console.log('selected ' + currentTeam)
         this.setState({
-            currentTeam
+            currentTeam,
+            currentTeamCheck: true
         })
+        const currentTeamSearch = this.state.currentTeam;
+        console.log(currentTeamSearch);
+        const res = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
+        this.setState({
+            currentTeamInfo: res
+        })
+
     }
 
     render() {
