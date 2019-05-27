@@ -5,9 +5,11 @@ class DisplayInfo extends Component {
         super(props);
     }
     render() {
+        const teamSelected = this.props.currentTeamInfo[0];
+        console.log(teamSelected);
         return(
             <div>
-                
+
             </div>
         )
     }

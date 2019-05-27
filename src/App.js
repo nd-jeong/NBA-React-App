@@ -56,21 +56,27 @@ class App extends Component {
         })
         const currentTeamSearch = this.state.currentTeam;
         console.log(currentTeamSearch);
-        const res = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
-        this.setState({
-            currentTeamInfo: res
-        })
-
+        console.log(this.state.currentTeamCheck);
+        if(this.state.currentTeamCheck === true) {
+            const res = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
+            this.setState({
+                currentTeamInfo: res.data.teams
+            })
+        }
     }
 
     render() {
         const teamArray = this.state.allTeamsList;
+        const currentTeamInfo = this.state.currentTeamInfo;
         
         return(
             <div>
                 <SidebarTeamList
                     teamArray={teamArray}
                     fetchCurrentTeam={this.fetchCurrentTeam}
+                />
+                <DisplayInfo
+                    currentTeamInfo={currentTeamInfo}
                 />
             </div>
         )

@@ -24,6 +24,7 @@ class SidebarTeamList extends Component {
 
     render() {
         const teams = this.props.teamArray;
+        console.log(teams)
         return(
             <div>
                 <div>
@@ -37,7 +38,11 @@ class SidebarTeamList extends Component {
                 <div>
                     {teams && teams.map(team => 
                         {if (team.conference === this.state.conference) {
-                            return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</h4>
+                            if (team.full_name === 'LA Clippers') {
+                                return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick('Los Angeles Clippers')}>Los Angeles Clippers</h4>
+                            } else {
+                                return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</h4>
+                            }
                         }}
                     )}
                 </div>
