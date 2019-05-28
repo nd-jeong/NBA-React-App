@@ -66,15 +66,15 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
 | Project Proposal | H | 3hrs| 3.5hrs |
-| Working with API | H | 4hrs| 0hrs |
-| Team List Component | H | 4hrs| 0hrs |
+| Working with API | H | 4hrs| 4hrs |
+| Team List Component | H | 4hrs| 3.5hrs |
 | Info Display Component | H | 5hrs| 0hrs |
 | Player Info Component | H | 4hrs| 0hrs |
 | Social Media Component | L | 3hrs| 0hrs |
 | Player Statistics Component | L | 6hrs| 0hrs |
 | Styling | H | 6hrs| 0hrs |
 | Find and work with Second API | M | 5hrs| 0hrs |
-| Total | H | 40hrs| 0hrs | 
+| Total | H | 40hrs| 11hrs | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 

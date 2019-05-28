@@ -1,19 +1,31 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class DisplayInfo extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            currentPlayer: ''
+            currentPlayer: '',
+            currentPlayerInfo: [],
+            currentPlayerCheck: false
         }
     }
 
-    fetchCurrentPlayerInfo(currentPlayer) {
+    async fetchCurrentPlayerInfo(currentPlayer) {
         console.log('selected ' + currentPlayer)
         this.setState({
-            currentPlayer
+            currentPlayer,
+            currentPlayerCheck: true
         })
+        if (this.state.currentPlayerCheck == true) {
+            await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=${this.state.currentPlayer}`)
+                .then(res => {
+                    this.setState({
+                        currentPlayerInfo: res.data
+                    })
+                })
+        }
     }
 
     render() {
