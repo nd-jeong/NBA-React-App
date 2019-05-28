@@ -26,7 +26,7 @@ class SidebarTeamList extends Component {
         const teams = this.props.teamArray;
         console.log(teams)
         return(
-            <div>
+            <nav>
                 <div>
                     <div onClick={() => this.conferenceToggle('West')}>
                         <h2>Western Conference</h2>
@@ -46,7 +46,7 @@ class SidebarTeamList extends Component {
                         }}
                     )}
                 </div>
-            </div>
+            </nav>
         )
     }  
 }

@@ -14,32 +14,20 @@ class App extends Component {
             allTeamsList: [],
             currentTeam: [],
             currentTeamInfo: [],
+            currentTeamRoster: [],
             currentTeamCheck: false
         }
         this.fetchCurrentTeam = this.fetchCurrentTeam.bind(this);
     }
 
     async componentDidMount() {
-        await axios.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=NBA')
-            .then(res => {
-                this.setState({
-                    allTeamsInfo: res.data
-                })
-            })
-        
-
-        // if (this.state.currentTeamCheck == true) {
-        //     await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${this.state.currentTeam}`)
+        // await axios.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=NBA')
         //     .then(res => {
         //         this.setState({
-        //             currentTeamInfo: res,
-        //             currentTeamCheck: false
+        //             allTeamsInfo: res.data
         //         })
         //     })
-        // }
         
-
-
         await axios.get('https://www.balldontlie.io/api/v1/teams')
             .then(res => {
                 this.setState({
@@ -57,10 +45,12 @@ class App extends Component {
         const currentTeamSearch = this.state.currentTeam;
         console.log(currentTeamSearch);
         console.log(this.state.currentTeamCheck);
-        if(this.state.currentTeamCheck === true) {
-            const res = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
+        if (this.state.currentTeamCheck === true) {
+            const resOne = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
+            const resTwo = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=${currentTeamSearch}`);
             this.setState({
-                currentTeamInfo: res.data.teams
+                currentTeamInfo: resOne.data.teams,
+                currentTeamRoster: resTwo.data
             })
         }
     }
@@ -68,15 +58,17 @@ class App extends Component {
     render() {
         const teamArray = this.state.allTeamsList;
         const currentTeamInfo = this.state.currentTeamInfo;
+        const currentTeamRoster = this.state.currentTeamRoster;
         
         return(
-            <div>
+            <div className='App'>
                 <SidebarTeamList
                     teamArray={teamArray}
                     fetchCurrentTeam={this.fetchCurrentTeam}
                 />
                 <DisplayInfo
                     currentTeamInfo={currentTeamInfo}
+                    currentTeamRoster={currentTeamRoster}
                 />
             </div>
         )
