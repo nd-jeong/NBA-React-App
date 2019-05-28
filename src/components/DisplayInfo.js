@@ -39,7 +39,17 @@ class DisplayInfo extends Component {
                 </header>
                 {teamSelected ? teamSelected.strDescriptionEN : <p></p>}
                 {roster && roster.map(player => {
-                    return <h5 key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
+                    if (player.strPosition === 'Manager') {
+                        return 
+                    } else {
+                        return(
+                            <div>
+                                <img src={player.strCutout}></img>
+                                <h5 key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
+                            </div>
+                        ) 
+                    }
+                    
                 })}
             </div>
         )
