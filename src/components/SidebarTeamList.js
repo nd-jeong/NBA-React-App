@@ -24,7 +24,7 @@ class SidebarTeamList extends Component {
 
     render() {
         const teams = this.props.teamArray;
-        console.log(teams)
+        
         return(
             <nav>
                 <div>

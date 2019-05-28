@@ -34,7 +34,6 @@ class DisplayTeamInfo extends Component {
     render() {
         const teamSelected = this.props.currentTeamInfo[0];
         const roster = this.props.currentTeamRoster.player;
-        console.log(teamSelected);
 
         return(
             <div>
@@ -47,9 +46,9 @@ class DisplayTeamInfo extends Component {
                         return 
                     } else {
                         return(
-                            <div>
+                            <div key={player.idPlayer}>
                                 <img src={player.strCutout} className='player-portrait'></img>
-                                <h5 key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
+                                <h5 onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
                             </div>
                         ) 
                     }
