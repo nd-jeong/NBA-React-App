@@ -11,7 +11,7 @@ class DisplayPlayerInfo extends Component {
             <div>
                 {selectedPlayer !== undefined ? 
                 <div>
-                    <h3>{selectedPlayer[0].strPlayer}</h3>
+                    <h1>{selectedPlayer[0].strPlayer}</h1>
                     <img src={selectedPlayer[0].strThumb}></img>
                     <p>{selectedPlayer[0].strDescriptionEN}</p>
                     <p>Position: {selectedPlayer[0].strPosition}</p>

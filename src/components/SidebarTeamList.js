@@ -57,7 +57,7 @@ class SidebarTeamList extends Component {
                     )}
                 </div>
                 <main>
-                    <Route path={this.state.selectedTeam} ></Route>
+                    <Route path={this.state.selectedTeam} component={DisplayTeamInfo}></Route>
                 </main>
             </nav>
         )

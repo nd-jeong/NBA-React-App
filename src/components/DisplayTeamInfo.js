@@ -47,9 +47,9 @@ class DisplayTeamInfo extends Component {
                             return 
                         } else {
                             return(
-                                <div key={player.idPlayer}>
+                                <div key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
                                     <img src={player.strCutout} className='player-portrait'></img>
-                                    <h5 onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
+                                    <h5>{player.strPlayer}</h5>
                                 </div>
                             ) 
                         }
