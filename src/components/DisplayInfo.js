@@ -3,6 +3,17 @@ import React, {Component} from 'react';
 class DisplayInfo extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            currentPlayer: ''
+        }
+    }
+
+    fetchCurrentPlayerInfo(currentPlayer) {
+        console.log('selected ' + currentPlayer)
+        this.setState({
+            currentPlayer
+        })
     }
 
     render() {
@@ -16,7 +27,7 @@ class DisplayInfo extends Component {
                 </header>
                 {teamSelected ? teamSelected.strDescriptionEN : <p></p>}
                 {roster && roster.map(player => {
-                    return <h5 key={player.idPlayer}>{player.strPlayer}</h5>
+                    return <h5 key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
                 })}
             </div>
         )
