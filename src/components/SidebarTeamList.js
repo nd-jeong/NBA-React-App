@@ -51,4 +51,4 @@ class SidebarTeamList extends Component {
     }  
 }
 
-export default SidebarTeamList
+export default SidebarTeamList;

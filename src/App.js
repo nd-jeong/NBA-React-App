@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import {Route, Link} from 'react-router-dom';
 import SidebarTeamList from './components/SidebarTeamList';
-import DisplayInfo from './components/DisplayInfo';
+import DisplayTeamInfo from './components/DisplayTeamInfo';
 
 class App extends Component {
     constructor() {
@@ -29,7 +29,7 @@ class App extends Component {
         //     })
         
         await axios.get('https://www.balldontlie.io/api/v1/teams')
-            .then(res => {
+            .then( res => {
                 this.setState({
                     allTeamsList: res.data.data
                 })
@@ -38,13 +38,13 @@ class App extends Component {
 
     async fetchCurrentTeam(currentTeam) {
         console.log('selected ' + currentTeam)
-        this.setState({
+        await this.setState({
             currentTeam,
             currentTeamCheck: true
         })
+
         const currentTeamSearch = this.state.currentTeam;
-        console.log(currentTeamSearch);
-        console.log(this.state.currentTeamCheck);
+
         if (this.state.currentTeamCheck === true) {
             const resOne = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${currentTeamSearch}`);
             const resTwo = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=${currentTeamSearch}`);
@@ -66,7 +66,7 @@ class App extends Component {
                     teamArray={teamArray}
                     fetchCurrentTeam={this.fetchCurrentTeam}
                 />
-                <DisplayInfo
+                <DisplayTeamInfo
                     currentTeamInfo={currentTeamInfo}
                     currentTeamRoster={currentTeamRoster}
                 />
