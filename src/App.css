@@ -1,3 +1,27 @@
-/* .App {
+nav {
+    flex-shrink: 0;
+}
+
+.App {
     display: flex;
-} */
+}
+
+.roster-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.team-info-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+}
+

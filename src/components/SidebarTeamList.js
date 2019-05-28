@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import {Route, Link} from 'react-router-dom';
+import DisplayTeamInfo from './DisplayTeamInfo';
 
 class SidebarTeamList extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            conference: ''
+            conference: '',
+            selectedTeam: ''
         }
         this.conferenceToggle = this.conferenceToggle.bind(this);
         this.handleTeamClick = this.handleTeamClick.bind(this);
@@ -20,6 +23,9 @@ class SidebarTeamList extends Component {
 
     handleTeamClick(currentTeam) {
         this.props.fetchCurrentTeam(currentTeam);
+        this.setState({
+            selectedTeam: currentTeam
+        })
     }
 
     render() {
@@ -35,17 +41,24 @@ class SidebarTeamList extends Component {
                         <h2>Eastern Conference</h2>
                     </div>
                 </div>
-                <div>
+                <div className='team-list'>
                     {teams && teams.map(team => 
                         {if (team.conference === this.state.conference) {
                             if (team.full_name === 'LA Clippers') {
-                                return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick('Los Angeles Clippers')}>Los Angeles Clippers</h4>
+                                return(
+                                    <Link to='/Los Angeles Clippers' key={team.id} onClick={() => this.handleTeamClick('Los Angeles Clippers')}>Los Angeles Clippers</Link>
+                                )
                             } else {
-                                return <h4 key={team.id} value={team.full_name} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</h4>
+                                return(
+                                    <Link to={team.full_name} key={team.id} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</Link>
+                                ) 
                             }
                         }}
                     )}
                 </div>
+                <main>
+                    <Route path={this.state.selectedTeam} ></Route>
+                </main>
             </nav>
         )
     }  

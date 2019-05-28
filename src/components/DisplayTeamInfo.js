@@ -36,24 +36,27 @@ class DisplayTeamInfo extends Component {
         const roster = this.props.currentTeamRoster.player;
 
         return(
-            <div>
+            <div className='team-info-display'>
                 <header>
-                    {teamSelected ? <img src={teamSelected.strTeamBanner}></img> : <p></p>}
+                    {teamSelected ? <img src={teamSelected.strTeamBanner}></img> : null}
                 </header>
-                {teamSelected ? teamSelected.strDescriptionEN : <p></p>}
-                {roster && roster.map(player => {
-                    if (player.strPosition === 'Manager') {
-                        return 
-                    } else {
-                        return(
-                            <div key={player.idPlayer}>
-                                <img src={player.strCutout} className='player-portrait'></img>
-                                <h5 onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
-                            </div>
-                        ) 
-                    }
+                {teamSelected ? teamSelected.strDescriptionEN : null}
+                <div className='roster-list'>
+                    {roster && roster.map(player => {
+                        if (player.strPosition === 'Manager') {
+                            return 
+                        } else {
+                            return(
+                                <div key={player.idPlayer}>
+                                    <img src={player.strCutout} className='player-portrait'></img>
+                                    <h5 onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>{player.strPlayer}</h5>
+                                </div>
+                            ) 
+                        }
                     
-                })}
+                    })}
+                </div>
+                
                 <DisplayPlayerInfo
                     currentPlayerInfo={this.state.currentPlayerInfo}
                 />
