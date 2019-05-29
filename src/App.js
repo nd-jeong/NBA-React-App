@@ -61,20 +61,23 @@ class App extends Component {
         const currentTeamRoster = this.state.currentTeamRoster;
         
         return(
-            <div className='App'>
+            <div>
                 <header className='page-header'>
                     <h1>NBA React App</h1>
                 </header>
-                <SidebarTeamList
-                    teamArray={teamArray}
-                    fetchCurrentTeam={this.fetchCurrentTeam}
-                />
-                <DisplayTeamInfo
-                    currentTeam={currentTeam}
-                    currentTeamInfo={currentTeamInfo}
-                    currentTeamRoster={currentTeamRoster}
-                />
+                <div className='App'>
+                    <SidebarTeamList
+                        teamArray={teamArray}
+                        fetchCurrentTeam={this.fetchCurrentTeam}
+                    />
+                    <DisplayTeamInfo
+                        currentTeam={currentTeam}
+                        currentTeamInfo={currentTeamInfo}
+                        currentTeamRoster={currentTeamRoster}
+                    />
+                </div>
             </div>
+            
         )
     }
 }

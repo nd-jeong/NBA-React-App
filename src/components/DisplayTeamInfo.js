@@ -39,18 +39,18 @@ class DisplayTeamInfo extends Component {
         return(
             <div className='team-info-display'>
                 <header>
-                    {teamSelected ? <img src={teamSelected.strTeamBanner}></img> : null}
+                    {teamSelected ? <img src={teamSelected.strTeamBanner} className='team-banner'></img> : null}
                 </header>
-                {teamSelected ? teamSelected.strDescriptionEN : null}
+                {teamSelected ? <p className='team-summary'>{teamSelected.strDescriptionEN}</p> : null}
                 <div className='roster-list'>
                     {roster && roster.map(player => {
                         if (player.strPosition === 'Manager') {
                             return 
                         } else {
                             return(
-                                <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
+                                <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
                                     <img src={player.strCutout} className='player-portrait'></img>
-                                    <h5>{player.strPlayer}</h5>
+                                    <h4 className='player-name'>{player.strPlayer}</h4>
                                 </Link>
                             ) 
                         }
