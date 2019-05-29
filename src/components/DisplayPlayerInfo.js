@@ -11,7 +11,7 @@ class DisplayPlayerInfo extends Component {
         return(
             <div className='player-info-window'>
                 {selectedPlayer !== undefined ? 
-                <div>
+                <div className='player-info'>
                     <h1>{selectedPlayer[0].strPlayer}</h1>
                     <img className='player-picture' src={selectedPlayer[0].strThumb}></img>
                     <p>{selectedPlayer[0].strDescriptionEN}</p>

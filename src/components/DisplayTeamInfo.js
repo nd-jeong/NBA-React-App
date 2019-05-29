@@ -10,9 +10,12 @@ class DisplayTeamInfo extends Component {
         this.state = {
             currentPlayer: '',
             currentPlayerInfo: [],
-            currentPlayerCheck: false
+            currentPlayerCheck: false,
+            displayPlayerInfo: false
         }
         this.fetchCurrentPlayerInfo = this.fetchCurrentPlayerInfo.bind(this);
+        this.togglePlayerInfo = this.togglePlayerInfo.bind(this);
+        this.outsideClick = this.outsideClick.bind(this);
     }
 
     async fetchCurrentPlayerInfo(currentPlayer) {
@@ -32,6 +35,26 @@ class DisplayTeamInfo extends Component {
         }
     }
 
+    // Used https://codepen.io/graubnla/pen/EgdgZm for closing the modal on clicking outisde
+
+    togglePlayerInfo() {
+        if (!this.state.displayPlayerInfo) {
+            document.addEventListener('click', this.outsideClick, false);
+        } else {
+            document.removeEventListener('click', this.outsideClick, false);
+        }
+        this.setState(prevState => ({
+            displayPlayerInfo: !prevState.displayPlayerInfo
+        }))
+    }
+
+    outsideClick(event) {
+        if (this.node.contains(event.target)) {
+            return;
+        }
+        this.togglePlayerInfo();
+    }
+
     render() {
         const teamSelected = this.props.currentTeamInfo[0];
         const roster = this.props.currentTeamRoster.player;
@@ -48,10 +71,12 @@ class DisplayTeamInfo extends Component {
                             return 
                         } else {
                             return(
-                                <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
-                                    <img src={player.strCutout} className='player-portrait'></img>
-                                    <h4 className='player-name'>{player.strPlayer}</h4>
-                                </Link>
+                                <div ref={node => {this.node = node;}}>
+                                    <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' key={player.idPlayer} onClick={() => {this.fetchCurrentPlayerInfo(player.strPlayer); this.togglePlayerInfo()}}>
+                                        <img src={player.strCutout} className='player-portrait'></img>
+                                        <h4 className='player-name'>{player.strPlayer}</h4>
+                                    </Link>
+                                </div>
                             ) 
                         }
                     
@@ -59,9 +84,9 @@ class DisplayTeamInfo extends Component {
                 </div>
                 <main>
                     <Route path={`/${this.props.currentTeam}/${this.state.currentPlayer}`} render={() => 
-                        <DisplayPlayerInfo
+                        (this.state.displayPlayerInfo === true ? <DisplayPlayerInfo
                             currentPlayerInfo={this.state.currentPlayerInfo}
-                        />
+                        /> : null)
                     }/>
                 </main>
             </div>
