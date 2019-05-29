@@ -50,14 +50,14 @@ class SidebarTeamList extends Component {
                                 )
                             } else {
                                 return(
-                                    <Link to={team.full_name} key={team.id} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</Link>
+                                    <Link to={`/${team.full_name}`} key={team.id} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</Link>
                                 ) 
                             }
                         }}
                     )}
                 </div>
                 <main>
-                    <Route path={this.state.selectedTeam} component={DisplayTeamInfo}></Route>
+                    <Route path={`/${this.state.selectedTeam}`} currentTeam={this.props.currentTeam} render={() => (this.state.currentTeam ? <DisplayTeamInfo/> : null)}></Route>
                 </main>
             </nav>
         )

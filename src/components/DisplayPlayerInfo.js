@@ -6,13 +6,14 @@ class DisplayPlayerInfo extends Component {
     }
 
     render() {
-        const selectedPlayer = this.props.currentPlayerInfo.player
+        const selectedPlayer = this.props.currentPlayerInfo.player;
+        console.log(selectedPlayer);
         return(
-            <div>
+            <div className='player-info-window'>
                 {selectedPlayer !== undefined ? 
                 <div>
                     <h1>{selectedPlayer[0].strPlayer}</h1>
-                    <img src={selectedPlayer[0].strThumb}></img>
+                    <img className='player-picture' src={selectedPlayer[0].strThumb}></img>
                     <p>{selectedPlayer[0].strDescriptionEN}</p>
                     <p>Position: {selectedPlayer[0].strPosition}</p>
                     <p>Height: {selectedPlayer[0].strHeight}</p>
@@ -20,7 +21,7 @@ class DisplayPlayerInfo extends Component {
                     <p>Birthday: {selectedPlayer[0].dateBorn}</p>
                     <p>Birthplace: {selectedPlayer[0].strBirthLocation}</p>
                 </div>
-                : <p></p>}
+                : null}
             </div>
         )
     }

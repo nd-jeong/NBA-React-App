@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import DisplayPlayerInfo from './DisplayPlayerInfo';
+import {Link, Route} from 'react-router-dom';
 
 class DisplayTeamInfo extends Component {
     constructor(props) {
@@ -47,19 +48,22 @@ class DisplayTeamInfo extends Component {
                             return 
                         } else {
                             return(
-                                <div key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
+                                <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} key={player.idPlayer} onClick={() => this.fetchCurrentPlayerInfo(player.strPlayer)}>
                                     <img src={player.strCutout} className='player-portrait'></img>
                                     <h5>{player.strPlayer}</h5>
-                                </div>
+                                </Link>
                             ) 
                         }
                     
                     })}
                 </div>
-                
-                <DisplayPlayerInfo
-                    currentPlayerInfo={this.state.currentPlayerInfo}
-                />
+                <main>
+                    <Route path={`/${this.props.currentTeam}/${this.state.currentPlayer}`} render={() => 
+                        <DisplayPlayerInfo
+                            currentPlayerInfo={this.state.currentPlayerInfo}
+                        />
+                    }/>
+                </main>
             </div>
         )
     }

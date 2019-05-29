@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios';
-import {Route, Link} from 'react-router-dom';
 import SidebarTeamList from './components/SidebarTeamList';
 import DisplayTeamInfo from './components/DisplayTeamInfo';
 
@@ -57,16 +56,21 @@ class App extends Component {
 
     render() {
         const teamArray = this.state.allTeamsList;
+        const currentTeam = this.state.currentTeam;
         const currentTeamInfo = this.state.currentTeamInfo;
         const currentTeamRoster = this.state.currentTeamRoster;
         
         return(
             <div className='App'>
+                <header className='page-header'>
+                    <h1>NBA React App</h1>
+                </header>
                 <SidebarTeamList
                     teamArray={teamArray}
                     fetchCurrentTeam={this.fetchCurrentTeam}
                 />
                 <DisplayTeamInfo
+                    currentTeam={currentTeam}
                     currentTeamInfo={currentTeamInfo}
                     currentTeamRoster={currentTeamRoster}
                 />
