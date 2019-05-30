@@ -40,8 +40,10 @@ class DisplayTeamInfo extends Component {
     togglePlayerInfo() {
         if (!this.state.displayPlayerInfo) {
             document.addEventListener('click', this.outsideClick, false);
+            console.log("click on");
         } else {
             document.removeEventListener('click', this.outsideClick, false);
+            console.log("click off")
         }
         this.setState(prevState => ({
             displayPlayerInfo: !prevState.displayPlayerInfo
@@ -50,7 +52,7 @@ class DisplayTeamInfo extends Component {
 
     outsideClick(event) {
         if (this.node.contains(event.target)) {
-            return;
+            return console.log("clicked");
         }
         this.togglePlayerInfo();
     }
@@ -71,8 +73,8 @@ class DisplayTeamInfo extends Component {
                             return 
                         } else {
                             return(
-                                <div ref={node => {this.node = node;}}>
-                                    <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' key={player.idPlayer} onClick={() => {this.fetchCurrentPlayerInfo(player.strPlayer); this.togglePlayerInfo()}}>
+                                <div className='player-link-container' key={player.idPlayer} ref={node => {this.node = node;}}>
+                                    <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' onClick={() => {this.fetchCurrentPlayerInfo(player.strPlayer); this.togglePlayerInfo()}}>
                                         <img src={player.strCutout} className='player-portrait'></img>
                                         <h4 className='player-name'>{player.strPlayer}</h4>
                                     </Link>
