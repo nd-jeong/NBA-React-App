@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import DisplayPlayerInfo from './DisplayPlayerInfo';
 import {Link, Route} from 'react-router-dom';
+import SocialMediaLinks from './SocialMediaLinks';
 
 class DisplayTeamInfo extends Component {
     constructor(props) {
@@ -64,6 +65,17 @@ class DisplayTeamInfo extends Component {
                     {teamSelected ? <img src={teamSelected.strTeamBanner} className='team-banner' alt={this.props.currentTeam + "'s banner"}></img> : null}
                 </header>
                 {teamSelected ? <p className='team-summary'>{teamSelected.strDescriptionEN}</p> : null}
+                <div>
+                    {teamSelected ? 
+                    <SocialMediaLinks
+                        teamYoutube={teamSelected.strYoutube}
+                        teamFacebook={teamSelected.strFacebook}
+                        teamTwitter={teamSelected.strTwitter}
+                        teamInstagram={teamSelected.strInstagram}
+                        teamWebsite={teamSelected.strWebsite}
+                        teamSelected={teamSelected}
+                    /> : null}
+                </div>
                 <div className='roster-list'>
                     {roster && roster.map(player => {
                         if (player.strPosition === 'Manager') {

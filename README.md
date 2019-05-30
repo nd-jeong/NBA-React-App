@@ -9,10 +9,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1| Wireframes / Priority Matrix / Functional Components | Complete
-|Day 2| Core Application Structure (HTML, CSS, etc.) / Pseudocode / actual code| Incomplete
-|Day 3| Initial Clickable Model | Incomplete
-|Day 4| More code | Incomplete
-|Day 5| Even more code / Styling / MVP| Incomplete
+|Day 2| Core Application Structure (HTML, CSS, etc.) / Pseudocode / actual code| Complete
+|Day 3| Initial Clickable Model | Complete
+|Day 4| More code | Complete
+|Day 5| Even more code / Styling / MVP| Complete
 |Day 6| MVP / Post-MVP | Incomplete
 |Day 7| Present | Incomplete
 
@@ -67,14 +67,14 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | --- | :---: |  :---: | :---: |
 | Project Proposal | H | 3hrs| 3.5hrs |
 | Working with API | H | 4hrs| 4hrs |
-| Team List Component | H | 4hrs| 3.5hrs |
-| Info Display Component | H | 5hrs| 0hrs |
-| Player Info Component | H | 4hrs| 0hrs |
+| Team List Component | H | 4hrs| 4.5hrs |
+| Info Display Component | H | 5hrs| 5hrs |
+| Player Info Component | H | 4hrs| 5hrs |
 | Social Media Component | L | 3hrs| 0hrs |
 | Player Statistics Component | L | 6hrs| 0hrs |
-| Styling | H | 6hrs| 0hrs |
+| Styling | H | 6hrs| 4hrs |
 | Find and work with Second API | M | 5hrs| 0hrs |
-| Total | H | 40hrs| 11hrs | 
+| Total | H | 40hrs| 26hrs | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
