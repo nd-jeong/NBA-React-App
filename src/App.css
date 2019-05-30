@@ -19,16 +19,16 @@ nav {
     border: 1px solid black;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    margin-bottom: 10px;
+    margin: 10px 0;
     background: black;
     color: white;
 }
 
 .conference-toggle-active {
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    margin-bottom: 10px;
+    margin: 10px 0;
     color: orange;
     background: black;
 }
@@ -120,7 +120,7 @@ nav {
 
 .player-link-container {
     border: 1px solid black;
-    margin: 5px;
+    margin: 3%;
     transition-duration: 0.6s;
     background: rgba(255, 255, 255, 0.25);
 }
@@ -157,7 +157,7 @@ nav {
 .social-media-container {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 1%;
+    margin: 1% 0;
 }
 
 .social-media-link {
@@ -191,25 +191,34 @@ nav {
 
 .team-name {
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
     padding: 15px;
     border: 1px solid black;
     transition-duration: .6s;
     font-family: 'Rubik', sans-serif;
-    background: white;
+    background: black;
 }
 
 .team-name:hover {
     background: black;
-    color: white;
+    color: orange;
     transform: scale(1.15);
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid white;
+}
+
+.team-name:focus {
+    background: black;
+    color: orange;
     font-size: 20px;
     font-weight: bold;
 }
 
 .team-summary {
-    margin: 30px;
+    margin-left: 30px;
+    padding: 15px;
     line-height: 2em;
     font-family: 'Rubik', sans-serif;
     background: rgba(255, 255, 255, 0.6);
