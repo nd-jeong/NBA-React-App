@@ -103,6 +103,7 @@ class DisplayTeamInfo extends Component {
                         path={`/${this.props.currentTeam}/${this.state.currentPlayer}`} 
                         render={() => (this.state.displayPlayerInfo === true ? <DisplayPlayerInfo
                             currentPlayerInfo={this.state.currentPlayerInfo}
+                            currentPlayer={this.state.currentPlayer}
                         /> : null)
                     }/>
                 </main>

@@ -70,11 +70,11 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Team List Component | H | 4hrs| 4.5hrs |
 | Info Display Component | H | 5hrs| 5hrs |
 | Player Info Component | H | 4hrs| 5hrs |
-| Social Media Component | L | 3hrs| 0hrs |
-| Player Statistics Component | L | 6hrs| 0hrs |
+| Social Media Component | L | 3hrs| 1.5hrs |
+| Player Statistics Component | L | 6hrs| 2hrs |
 | Styling | H | 6hrs| 4hrs |
-| Find and work with Second API | M | 5hrs| 0hrs |
-| Total | H | 40hrs| 26hrs | 
+| Find and work with Second API | M | 5hrs| 1hrs |
+| Total | H | 40hrs| 30.5hrs | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -83,7 +83,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Library | What it Does | 
 | --- | :---: |  
 | The Sports DB API | Used for team and player info |
-| Ball Dont Lie API | Used for team info and player statistics |  
+| Ball Dont Lie API | Used for team info and player statistics | 
 
 ## Code Snippet
 

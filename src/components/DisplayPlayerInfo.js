@@ -1,6 +1,28 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class DisplayPlayerInfo extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            currentPlayerData: [],
+            currentPlayerID: '',
+            currentPlayerStats: []
+        }
+    }
+
+    async componentDidMount() {
+        if (this.props.currentPlayer) {
+            await axios.get(`https://www.balldontlie.io/api/v1/players?search=${this.props.currentPlayer}`)
+                .then( res => {
+                    this.setState({
+                        currentPlayerData: res.data.data
+                })
+            })
+        }
+    }
+
     render() {
         const selectedPlayer = this.props.currentPlayerInfo.player;
         return(

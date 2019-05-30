@@ -36,7 +36,6 @@ class App extends Component {
     }
 
     async fetchCurrentTeam(currentTeam) {
-        console.log('selected ' + currentTeam)
         await this.setState({
             currentTeam,
             currentTeamCheck: true
