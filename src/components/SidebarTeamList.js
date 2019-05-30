@@ -17,7 +17,6 @@ class SidebarTeamList extends Component {
     }
     
     conferenceToggle(conference) {
-        console.log(conference)
         this.setState({
             conference
         })
@@ -42,10 +41,14 @@ class SidebarTeamList extends Component {
         return(
             <nav>
                 <div>
-                    <div className={this.state.conference === 'West' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} onClick={() => {this.conferenceToggle('West'); this.toggleMenu()}}>
+                    <div 
+                        className={this.state.conference === 'West' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} 
+                        onClick={() => {this.conferenceToggle('West'); this.toggleMenu()}}>
                         <h2>Western Conference</h2>
                     </div>
-                    <div className={this.state.conference === 'East' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} onClick={() => {this.conferenceToggle('East'); this.toggleMenu()}}>
+                    <div 
+                        className={this.state.conference === 'East' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} 
+                        onClick={() => {this.conferenceToggle('East'); this.toggleMenu()}}>
                         <h2>Eastern Conference</h2>
                     </div>
                 </div>
@@ -54,18 +57,33 @@ class SidebarTeamList extends Component {
                         {if (team.conference === this.state.conference && this.state.toggleMenu === true) {
                             if (team.full_name === 'LA Clippers') {
                                 return(
-                                    <Link to='/Los Angeles Clippers' className='team-name' key={team.id} onClick={() => this.handleTeamClick('Los Angeles Clippers')}>Los Angeles Clippers</Link>
+                                    <Link 
+                                        to='/Los Angeles Clippers' 
+                                        className='team-name' 
+                                        key={team.id} 
+                                        onClick={() => this.handleTeamClick('Los Angeles Clippers')}>
+                                            Los Angeles Clippers
+                                    </Link>
                                 )
                             } else {
                                 return(
-                                    <Link to={`/${team.full_name}`} className='team-name' key={team.id} onClick={() => this.handleTeamClick(team.full_name)}>{team.full_name}</Link>
+                                    <Link 
+                                        to={`/${team.full_name}`} 
+                                        className='team-name' 
+                                        key={team.id} 
+                                        onClick={() => this.handleTeamClick(team.full_name)}>               {team.full_name}
+                                    </Link>
                                 ) 
                             }
                         }}
                     )}
                 </div>
                 <main>
-                    <Route path={`/${this.state.selectedTeam}`} currentTeam={this.props.currentTeam} render={() => (this.state.currentTeam ? <DisplayTeamInfo/> : null)}></Route>
+                    <Route 
+                        path={`/${this.state.selectedTeam}`} 
+                        currentTeam={this.props.currentTeam} 
+                        render={() => (this.state.currentTeam ? <DisplayTeamInfo/> : null)}>
+                    </Route>
                 </main>
             </nav>
         )

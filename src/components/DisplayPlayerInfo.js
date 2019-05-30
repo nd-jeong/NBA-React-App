@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class DisplayPlayerInfo extends Component {
     render() {
         const selectedPlayer = this.props.currentPlayerInfo.player;
-        console.log(selectedPlayer);
         return(
             <div className='player-info-window'>
                 {selectedPlayer !== undefined ? 
@@ -19,7 +18,6 @@ class DisplayPlayerInfo extends Component {
                             <p><span className='player-category'>Birthplace:</span> {selectedPlayer[0].strBirthLocation}</p>
                         </div>
                     </div>    
-                    
                     <p className='player-info-description'>{selectedPlayer[0].strDescriptionEN}</p>
                 </div>
                 : null}

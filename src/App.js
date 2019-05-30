@@ -75,6 +75,9 @@ class App extends Component {
                         currentTeamInfo={currentTeamInfo}
                         currentTeamRoster={currentTeamRoster}
                     />
+                    <div>
+                        {this.state.currentTeamCheck === false ? <h1 className="introduction">Select a conference and then select a specific team.</h1> : null}
+                    </div>
                 </div>
             </div>
             
