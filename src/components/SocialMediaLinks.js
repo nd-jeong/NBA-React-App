@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Domain from '../images/domain.png';
+import Link from '../images/link.png';
 import Facebook from '../images/facebook.png';
 import Instagram from '../images/instagram.png';
 import Twitter from '../images/twitter.png';
@@ -9,21 +9,21 @@ class SocialMediaLinks extends Component {
     render() {
         console.log(this.props)
         return(
-            <div>
-                <a href={"https://" + this.props.teamWebsite} target='_blank'>
-                    <img src={Domain}></img>
+            <div className='social-media-container'>
+                <a className='social-media-link' href={"https://" + this.props.teamWebsite} target='_blank'>
+                    <img src={Link} alt="NBA.com"></img>
                 </a>
-                <a href={"https://" + this.props.teamFacebook} target='_blank'>
-                    <img src={Facebook}></img>
+                <a className='social-media-link' href={"https://" + this.props.teamFacebook} target='_blank'>
+                    <img src={Facebook} alt='Facebook'></img>
                 </a>
-                <a href={"https://" + this.props.teamInstagram} target='_blank'>
-                    <img src={Instagram}></img>
+                <a className='social-media-link' href={"https://" + this.props.teamInstagram} target='_blank'>
+                    <img src={Instagram} alt='Instagram'></img>
                 </a>
-                <a href={"https://" + this.props.teamTwitter} target='_blank'>
-                    <img src={Twitter}></img>
+                <a className='social-media-link' href={"https://" + this.props.teamTwitter} target='_blank'>
+                    <img src={Twitter} alt='Twitter'></img>
                 </a>
-                <a href={"https://" + this.props.teamYoutube} target='_blank'>
-                    <img src={YouTube}></img>
+                <a className='social-media-link' href={"https://" + this.props.teamYoutube} target='_blank'>
+                    <img src={YouTube} alt='YouTube'></img>
                 </a>
             </div>
         )

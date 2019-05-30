@@ -1,5 +1,5 @@
 body {
-    background: url("./images/background2.jpg") black;
+    background: url("./images/background2.jpg") black no-repeat center fixed;
 }
 
 nav {
@@ -35,6 +35,13 @@ nav {
 
 .introduction {
     color: white;
+    text-align: center;
+}
+
+.introduction-container {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .page-header {
@@ -147,16 +154,30 @@ nav {
     align-items: center;
 }
 
+.social-media-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+}
+
+.social-media-link {
+    transition-duration: 0.7s;
+}
+
+.social-media-link:hover {
+    transform: scale(1.15);
+}
+
 .team-banner {
     width: 100%;
-    margin: 0;
+    margin-left: 2.5%;
     border: 1px solid black;
 }
 
 .team-info-display {
     display: flex;
     flex-direction: column;
-    margin-left: 1%;
+    justify-content: space-evenly;
 }
 
 .team-list {
