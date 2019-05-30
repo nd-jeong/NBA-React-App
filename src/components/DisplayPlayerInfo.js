@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 class DisplayPlayerInfo extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const selectedPlayer = this.props.currentPlayerInfo.player;
         console.log(selectedPlayer);
@@ -14,7 +10,7 @@ class DisplayPlayerInfo extends Component {
                 <div className='player-info-container'>
                     <h1 className='player-info-name'>{selectedPlayer[0].strPlayer}</h1>
                     <div className='player-picture-description'>
-                        <img className='player-info-picture' src={selectedPlayer[0].strThumb}></img>
+                        <img className='player-info-picture' src={selectedPlayer[0].strThumb} alt={selectedPlayer[0].strPlayer}></img>
                         <div className='player-info-categories'>
                             <p><span className='player-category'>Position:</span> {selectedPlayer[0].strPosition}</p>
                             <p><span className='player-category'>Height:</span> {selectedPlayer[0].strHeight}</p>

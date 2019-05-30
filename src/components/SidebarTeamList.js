@@ -24,7 +24,6 @@ class SidebarTeamList extends Component {
     }
 
     toggleMenu = () => {
-        console.log(this.state.toggleMenu)
         this.setState(prevState => ({
             toggleMenu: !prevState.toggleMenu
         }))
@@ -43,15 +42,15 @@ class SidebarTeamList extends Component {
         return(
             <nav>
                 <div>
-                    <div className='conference-toggle' onClick={() => {this.conferenceToggle('West'); this.toggleMenu()}}>
+                    <div className={this.state.conference === 'West' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} onClick={() => {this.conferenceToggle('West'); this.toggleMenu()}}>
                         <h2>Western Conference</h2>
                     </div>
-                    <div className='conference-toggle' onClick={() => {this.conferenceToggle('East'); this.toggleMenu()}}>
+                    <div className={this.state.conference === 'East' && this.state.toggleMenu === true ? 'conference-toggle-active' : 'conference-toggle'} onClick={() => {this.conferenceToggle('East'); this.toggleMenu()}}>
                         <h2>Eastern Conference</h2>
                     </div>
                 </div>
                 <div className='team-list'>
-                    {teams && teams.map(team => 
+                    {teams && teams.map( team => 
                         {if (team.conference === this.state.conference && this.state.toggleMenu === true) {
                             if (team.full_name === 'LA Clippers') {
                                 return(

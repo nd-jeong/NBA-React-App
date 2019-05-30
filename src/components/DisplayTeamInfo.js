@@ -25,7 +25,7 @@ class DisplayTeamInfo extends Component {
             currentPlayerCheck: true
         })
 
-        if (this.state.currentPlayerCheck == true) {
+        if (this.state.currentPlayerCheck === true) {
             await axios.get(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=${this.state.currentPlayer}`)
                 .then( res => {
                     this.setState({
@@ -64,7 +64,7 @@ class DisplayTeamInfo extends Component {
         return(
             <div className='team-info-display'>
                 <header>
-                    {teamSelected ? <img src={teamSelected.strTeamBanner} className='team-banner'></img> : null}
+                    {teamSelected ? <img src={teamSelected.strTeamBanner} className='team-banner' alt={this.props.currentTeam + "'s banner"}></img> : null}
                 </header>
                 {teamSelected ? <p className='team-summary'>{teamSelected.strDescriptionEN}</p> : null}
                 <div className='roster-list'>
@@ -75,7 +75,7 @@ class DisplayTeamInfo extends Component {
                             return(
                                 <div className='player-link-container' key={player.idPlayer} ref={node => {this.node = node;}}>
                                     <Link to={`/${this.props.currentTeam}/${player.strPlayer}`} className='player-link' onClick={() => {this.fetchCurrentPlayerInfo(player.strPlayer); this.togglePlayerInfo()}}>
-                                        <img src={player.strCutout} className='player-portrait'></img>
+                                        <img src={player.strCutout} className='player-portrait' alt={player.strPlayer}></img>
                                         <h4 className='player-name'>{player.strPlayer}</h4>
                                     </Link>
                                 </div>

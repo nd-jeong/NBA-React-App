@@ -1,3 +1,7 @@
+body {
+    background: url("./images/background.jpg")
+}
+
 nav {
     flex-shrink: 0;
     display: flex;
@@ -15,10 +19,18 @@ nav {
     border: 1px solid black;
     text-align: center;
     font-family: 'Rubik', sans-serif;
+    margin-bottom: 10px;
+    background: black;
+    color: white;
 }
 
-.conference-toggle:hover {
-
+.conference-toggle-active {
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 10px;
+    color: orange;
+    background: black;
 }
 
 .page-header {
@@ -54,7 +66,8 @@ nav {
     margin: 0 100px;
     display: flex;
     flex-direction: column;
-    border: 3px solid orange
+    border: 3px solid orange;
+    background: rgba(220, 220, 220);
 }
 
 .player-info-name {
@@ -84,7 +97,7 @@ nav {
     z-index: 2;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     font-family: 'Rubik', sans-serif;
 }
 
@@ -98,10 +111,11 @@ nav {
     border: 1px solid black;
     margin: 5px;
     transition-duration: 0.6s;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .player-link-container:hover {
-    
+    background: white;
 }
 
 .player-name {
@@ -138,7 +152,7 @@ nav {
 .team-info-display {
     display: flex;
     flex-direction: column;
-    /* margin: 0 50px; */
+    margin-left: 1%;
 }
 
 .team-list {
@@ -147,6 +161,7 @@ nav {
     top: 0;
     bottom: 0;
     font-family: 'Rubik', sans-serif;
+    background: white;
 }
 
 .team-name {
@@ -156,7 +171,8 @@ nav {
     padding: 15px;
     border: 1px solid black;
     transition-duration: .6s;
-    font-family: 'Rubik', sans-serif; 
+    font-family: 'Rubik', sans-serif;
+    background: white;
 }
 
 .team-name:hover {
@@ -171,6 +187,7 @@ nav {
     margin: 30px;
     line-height: 2em;
     font-family: 'Rubik', sans-serif;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /* background Image by <a href="https://pixabay.com/users/jimgade-6847478/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3354860">Jim Gade Pixabay */
