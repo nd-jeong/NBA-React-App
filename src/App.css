@@ -1,5 +1,5 @@
 body {
-    background: url("./images/background2.jpg") black no-repeat center fixed;
+    background: url("./images/background.jpg") black no-repeat center fixed;
 }
 
 nav {
@@ -33,6 +33,10 @@ nav {
     background: black;
 }
 
+.header-image {
+    overflow: hidden;
+}
+
 .introduction {
     color: white;
     text-align: center;
@@ -50,6 +54,10 @@ nav {
     text-align: right;
     color: white;
     background: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    outline: 3px solid orange;
 }
 
 .page-header h1 {
@@ -123,10 +131,12 @@ nav {
     margin: 3%;
     transition-duration: 0.6s;
     background: rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
 }
 
 .player-link-container:hover {
     background: white;
+    border: 1px solid orange;
 }
 
 .player-name {
@@ -222,6 +232,7 @@ nav {
     line-height: 2em;
     font-family: 'Rubik', sans-serif;
     background: rgba(255, 255, 255, 0.6);
+    border-radius: 35px;
 }
 
 /* background Image by <a href="https://pixabay.com/users/jimgade-6847478/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3354860">Jim Gade Pixabay */

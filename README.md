@@ -13,7 +13,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 3| Initial Clickable Model | Complete
 |Day 4| More code | Complete
 |Day 5| Even more code / Styling / MVP| Complete
-|Day 6| MVP / Post-MVP | Incomplete
+|Day 6| MVP / Post-MVP | Semi-Complete
 |Day 7| Present | Incomplete
 
 
@@ -72,9 +72,9 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Player Info Component | H | 4hrs| 5hrs |
 | Social Media Component | L | 3hrs| 1.5hrs |
 | Player Statistics Component | L | 6hrs| 2hrs |
-| Styling | H | 6hrs| 4hrs |
+| Styling | H | 6hrs| 5.5hrs |
 | Find and work with Second API | M | 5hrs| 1hrs |
-| Total | H | 40hrs| 30.5hrs | 
+| Total | H | 40hrs| 32hrs | 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -86,15 +86,15 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Ball Dont Lie API | Used for team info and player statistics | 
 
 ## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
-#### SAMPLE.....
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+<Route 
+    path={`/${this.state.selectedTeam}`} 
+    currentTeam={this.props.currentTeam} 
+    render={() => (this.state.currentTeam ? <DisplayTeamInfo/> : null)}>
+</Route>
 ```
+
+This route kept gaving render errors until I added the ternary operator.
 
 ## API Data Snippet
 --Team--
@@ -161,16 +161,6 @@ function reverse(string) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
-
-#### SAMPLE.....
 | Original Plan | Outcome | 
 | --- | :---: |  
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
-
-## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+| Have player statisitcs added to PlayerInfo component | Ran into an issue where some players had undefined issues. Removed statistics as well as react-table and react-bootstrap | 

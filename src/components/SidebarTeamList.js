@@ -11,6 +11,7 @@ class SidebarTeamList extends Component {
             selectedTeam: '',
             toggleMenu: false
         }
+        
         this.conferenceToggle = this.conferenceToggle.bind(this);
         this.handleTeamClick = this.handleTeamClick.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
@@ -54,8 +55,7 @@ class SidebarTeamList extends Component {
                 </div>
                 <div className='team-list'>
                     {teams && teams.map( team => 
-                        {if (team.conference === this.state.conference && this.state.toggleMenu === true) {
-                            if (team.full_name === 'LA Clippers') {
+                        {if (team.conference === this.state.conference && this.state.toggleMenu === true)     {if (team.full_name === 'LA Clippers') {
                                 return(
                                     <Link 
                                         to='/Los Angeles Clippers' 

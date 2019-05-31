@@ -20,13 +20,6 @@ class App extends Component {
     }
 
     async componentDidMount() {
-        // await axios.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=NBA')
-        //     .then(res => {
-        //         this.setState({
-        //             allTeamsInfo: res.data
-        //         })
-        //     })
-        
         await axios.get('https://www.balldontlie.io/api/v1/teams')
             .then( res => {
                 this.setState({
@@ -79,7 +72,6 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-            
         )
     }
 }

@@ -79,7 +79,7 @@ class DisplayTeamInfo extends Component {
                 <div className='roster-list'>
                     {roster && roster.map(player => {
                         if (player.strPosition === 'Manager') {
-                            return 
+                            return; 
                         } else {
                             return(
                                 <div className='player-link-container' key={player.idPlayer} ref={node => {this.node = node;}}>
@@ -101,7 +101,8 @@ class DisplayTeamInfo extends Component {
                 <main>
                     <Route 
                         path={`/${this.props.currentTeam}/${this.state.currentPlayer}`} 
-                        render={() => (this.state.displayPlayerInfo === true ? <DisplayPlayerInfo
+                        render={() => (this.state.displayPlayerInfo === true ? 
+                        <DisplayPlayerInfo
                             currentPlayerInfo={this.state.currentPlayerInfo}
                             currentPlayer={this.state.currentPlayer}
                         /> : null)
